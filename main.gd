@@ -8,11 +8,12 @@ var p2score : int = -1
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
-	p1scoreboard.text = str(p1score)
-	p2scoreboard.text = str(p2score)
+	get_tree().paused = true
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(_delta: float) -> void:
+	p1scoreboard.text = str(p1score)
+	p2scoreboard.text = str(p2score)
 	if p1score == 5 or p2score == 5:
 		p1score = p1score + 1
 		p2score = p2score + 1
@@ -24,11 +25,17 @@ func game_over():
 		get_tree().paused = true
 		$gameover.playing = true
 		await $gameover.finished
+		$START.visible = true
+		p1score  = 0
+		p2score = 0
 	else:
 		$p2victory.visible = true
 		get_tree().paused = true
 		$gameover.playing = true
 		await $gameover.finished
+		$START.visible = true
+		p1score  = 0
+		p2score = 0
 
 func _on_ball_spawn_timeout() -> void:
 	$ball.spawn_ball()
@@ -49,4 +56,4 @@ func _on_p_1_goal_body_entered(_body: Node2D) -> void:
 
 
 func _on_start_game_started() -> void:
-	pass # Replace with function body.
+	get_tree().paused = false

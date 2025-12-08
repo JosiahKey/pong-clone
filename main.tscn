@@ -58,16 +58,17 @@ anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = -16.0
-offset_top = -284.0
-offset_right = 32.0
-offset_bottom = -254.0
+offset_left = -24.0
+offset_top = -291.5
+offset_right = 24.0
+offset_bottom = -246.5
 grow_horizontal = 2
 grow_vertical = 2
 
 [node name="score1" type="Label" parent="midfield/scoreboard"]
 layout_mode = 2
-text = "S1"
+theme_override_font_sizes/font_size = 32
+text = "0"
 
 [node name="ColorRect" type="ColorRect" parent="midfield/scoreboard"]
 custom_minimum_size = Vector2(4, 30)
@@ -75,7 +76,8 @@ layout_mode = 2
 
 [node name="score2" type="Label" parent="midfield/scoreboard"]
 layout_mode = 2
-text = "S2"
+theme_override_font_sizes/font_size = 32
+text = "0"
 
 [node name="top_boundry" type="ColorRect" parent="."]
 custom_minimum_size = Vector2(1152, 8)
@@ -91,6 +93,7 @@ offset_bottom = 648.0
 size_flags_horizontal = 3
 
 [node name="p1victory" type="Label" parent="."]
+process_mode = 3
 visible = false
 anchors_preset = 5
 anchor_left = 0.5
@@ -107,7 +110,8 @@ theme_override_constants/shadow_offset_y = 8
 theme_override_font_sizes/font_size = 40
 text = "PLAYER 1 WINS!"
 
-[node name="p1victory2" type="Label" parent="."]
+[node name="p2victory" type="Label" parent="."]
+process_mode = 3
 visible = false
 anchors_preset = 5
 anchor_left = 0.5
@@ -125,6 +129,7 @@ theme_override_font_sizes/font_size = 40
 text = "PLAYER 2 WINS!"
 
 [node name="START" type="Button" parent="."]
+process_mode = 3
 anchors_preset = 5
 anchor_left = 0.5
 anchor_right = 0.5
